@@ -40,10 +40,19 @@
           <a class="text-white hover:text-black font-medium" href="?page=support">Community/Support</a>
         </li>
       </ul>
-      <div>
+      
         <?php
         if (isset($_SESSION['login'])) {
         ?>
+           
+      
+      <a class="hidden xl:flex items-center px-12 border-l font-semibold font-heading text-white hover:text-black" href="?page=notification">
+        <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+          <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" fill="white"></path>
+        </svg>
+        <span>Notification</span>
+        </a>
+      
 
           <a class="hidden xl:flex items-center px-12 border-l font-semibold font-heading text-white hover:text-black" href="?page=logout">
             <svg class="mr-3" width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,75 +71,9 @@
           </a>
         <?php } ?>
       </div>
-      <!-- Notification -->
-      <!-- <div>
-          <div
-            aria-live="assertive"
-            class="fixed top-6 inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
-          >
-            <div class="w-full flex flex-col items-center right-4 sm:items-end">
-              <div
-                class="max-w-sm w-full bg-white mt-2 shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden"
-              >
-                <div class="p-4">
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0">
-                      <svg
-                        class="h-6 w-6 text-green-400"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div class="ml-3 w-0 flex-1 pt-0.5">
-                      <p class="text-sm font-medium text-gray-900">Alert</p>
-                      <p class="mt-1 text-sm text-gray-500">
-                        Admin approved tou paln
-                      </p>
-                    </div>
-                    <div class="ml-4 flex-shrink-0 flex">
-                      <button
-                        type="button"
-                        class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        <span class="sr-only">Close</span>
-                        <svg
-                          class="h-5 w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
+  
     </div>
-    <button class="navbar-burger self-center xl:hidden">
-      <svg width="35" height="35" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect class="text-white" width="32" height="32" rx="6" fill="currentColor"></rect>
-        <path class="text-coolGray-500" d="M7 12H25C25.2652 12 25.5196 11.8946 25.7071 11.7071C25.8946 11.5196 26 11.2652 26 11C26 10.7348 25.8946 10.4804 25.7071 10.2929C25.5196 10.1054 25.2652 10 25 10H7C6.73478 10 6.48043 10.1054 6.29289 10.2929C6.10536 10.4804 6 10.7348 6 11C6 11.2652 6.10536 11.5196 6.29289 11.7071C6.48043 11.8946 6.73478 12 7 12ZM25 15H7C6.73478 15 6.48043 15.1054 6.29289 15.2929C6.10536 15.4804 6 15.7348 6 16C6 16.2652 6.10536 16.5196 6.29289 16.7071C6.48043 16.8946 6.73478 17 7 17H25C25.2652 17 25.5196 16.8946 25.7071 16.7071C25.8946 16.5196 26 16.2652 26 16C26 15.7348 25.8946 15.4804 25.7071 15.2929C25.5196 15.1054 25.2652 15 25 15ZM25 20H7C6.73478 20 6.48043 20.1054 6.29289 20.2929C6.10536 20.4804 6 20.7348 6 21C6 21.2652 6.10536 21.5196 6.29289 21.7071C6.48043 21.8946 6.73478 22 7 22H25C25.2652 22 25.5196 21.8946 25.7071 21.7071C25.8946 21.5196 26 21.2652 26 21C26 20.7348 25.8946 20.4804 25.7071 20.2929C25.5196 20.1054 25.2652 20 25 20Z" fill="currentColor"></path>
-      </svg>
-    </button>
+
   </nav>
 
   <?php echo $content; ?>

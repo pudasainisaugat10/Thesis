@@ -9,8 +9,21 @@ if (isset($_POST['submit'])) {
     'id' => $_POST['id']
   ];
   $article->update($data, 'id');
+  $article1 = new DatabaseTable('applied_plans');
+ $article1 = $article1->find('id', $_POST['id'])->fetch();
+ //when the plans approved by system admin notifiaction will be send to users
+  $notification = new DatabaseTable('notifications');
+  $user = new DatabaseTable('users');
+  $user = $user->find('name', $article1['user_name']);
+  $user = $user->fetch();
+  $datas = [ 
+    'user_id' => $user['id'],
+    'message' => 'Your Plan has been Approved Successfully'
+  ];
+
+  $notification->save($datas, 'id');
   echo '<script language="javascript">';
-  echo 'alert("Appointment Approved Successfully")';
+  echo 'alert("Plan Approved Successfully")';
 
   echo '</script>';
 }
@@ -128,7 +141,12 @@ if (isset($_POST['submit'])) {
                       <div class="flex justify-end space-x-4">
                         <form action="" method="POST">
                           <input type="hidden" name="id" value="<?php echo $row1['id']; ?>">
+                          <?php if($row1['status']!='approved'){
+                          
+                            ?>
+                          
                           <input name="submit" type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value="Approve">
+                          <?php } ?>
                       </div>
                     </td>
                   </tr>

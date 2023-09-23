@@ -1,20 +1,9 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <?php
 // Process a form submission to save a message in the 'messages' table and display a success alert.
 $message = new DatabaseTable('messages');
 
-if (isset($_POST['submit'])) {
 
-  $data = [
-    'user_id' => $_SESSION['login'],
-    'message' => $_POST['message'],
-    'date' => date('Y-m-d')
-  ];
-
-  $message->save($data, 'id');
-  echo '<script language="javascript">';
-  echo 'alert("Messsage Sent Successfully")';
-  echo '</script>';
-}
 ?>
 
 <div class="bg-gray-100 min-h-screen py-12 px-4">
@@ -141,14 +130,31 @@ if (isset($_POST['submit'])) {
                 </div>
             <?php }
             } ?>
+            <br>
+
+            <div class="mb-2 float-right">
+
+              <div class="bg-blue-100 p-2 rounded-lg" id="dm" style="display: none;">
+                <div class="append-message"> &nbsp; </div>
+              </div>
+            </div>
+
+            <div class="mb-2 mt-10" id="adminmessage" style="display: none;">
+              <div class="text-sm font-semibold">Admin:</div>
+              <div class="bg-gray-100 p-2 rounded-lg">
+                Hi, How can I help you?
+              </div>
+            </div>
+
+
 
           </div>
           <div class="px-4 py-2 border-t border-gray-300">
-            <form action="" method="POST">
-              <input type="text" name="message" placeholder="Type your message..." class="w-full border rounded px-2 py-1" />
-              <input type="submit" name="submit" value="send" class="mt-2 bg-red-500 text-white font-semibold px-3 py-1 rounded float-right">
 
-            </form>
+            <input type="text" name="message" id="message" placeholder="Type your message..." class="w-full border rounded px-2 py-1" />
+            <input type="submit" name="submit" id="submit" value="send" class="mt-2 bg-red-500 text-white font-semibold px-3 py-1 rounded float-right">
+
+
           </div>
         </div>
 
@@ -156,6 +162,41 @@ if (isset($_POST['submit'])) {
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+
+    $("#submit").click(function() {
+
+      var message = $("#message").val();
+
+
+      $.ajax({
+        type: "POST",
+        url: "?page=submitMessage",
+        data: {
+          message: message
+        },
+        cache: false,
+        success: function(data) {
+
+          $("#dm").show();
+          $(".append-message").append(message);
+          $("#adminmessage").show();
+          $("#message").val("");
+
+        },
+        error: function(xhr, status, error) {
+          console.error(xhr);
+        }
+      });
+
+    });
+
+  });
+</script>
+
+
 
 <script>
   // Functions to hide modal elements by adding the "hidden" class.

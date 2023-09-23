@@ -32,7 +32,6 @@ if (isset($_SESSION['login'])) {
 ?>
 
 
-
 <div class="mt-14 py-3">
   <div class="flex justify-center items-center mb-6">
     <hr class="h-1 w-16 bg-red-300 mx-2" />

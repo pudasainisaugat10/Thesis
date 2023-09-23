@@ -138,86 +138,8 @@
 
 
     </a>
-    <?php echo $content; ?> <!-- Notification -->
-    <!-- <div>
-      <div
-        aria-live="assertive"
-        class="fixed top-12 inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
-      >
-        <div class="w-full flex flex-col items-center right-4 sm:items-end">
-          <div
-            class="max-w-sm w-full bg-white mt-2 shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden"
-          >
-            <div class="p-4">
-              <div class="flex items-start">
-                <div class="flex-shrink-0">
-                  <svg
-                    class="h-6 w-6 text-green-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <svg
-                    class="h-6 w-6 text-red-400 fill-red-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="1"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"
-                    />
-                    <path
-                      d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"
-                    />
-                  </svg>
-                </div>
-                <div class="ml-3 w-0 flex-1 pt-0.5">
-                  <p class="text-sm font-medium text-gray-900">
-                    New Form Alert
-                  </p>
-                  <p class="mt-1 text-sm text-gray-500">
-                    Usser has applied for healthservice
-                  </p>
-                </div>
-                <div class="ml-4 flex-shrink-0 flex">
-                  <button
-                    type="button"
-                    class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    <span class="sr-only">Close</span>
-                    <svg
-                      class="h-5 w-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    <?php echo $content; ?> 
+    
 </body>
 
 </html>

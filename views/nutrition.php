@@ -244,7 +244,7 @@ if (isset($_SESSION['login'])) {
               <button id="payment-button" style="display: none;" class="bg-green-500 text-white font-medium rounded-md py-2 px-4 shadow-sm hover:bg-gray-500">Pay with Khalti</button>
               <script>
                 var config = {
-                  // replace the publicKey with yours
+                  
                   "publicKey": "test_public_key_a9cf3dd5c58c4a0aa45b92d8d8d8c33f",
                   "productIdentity": "01",
                   "productName": "HealthService",

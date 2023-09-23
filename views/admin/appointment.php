@@ -119,7 +119,12 @@ if (isset($_POST['submit'])) {
                                                 <div class="flex justify-end space-x-4">
                                                     <form action="" method="POST">
                                                         <input type="hidden" name="id" value="<?php echo $row1['id']; ?>">
-                                                        <input name="submit" type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value="Approve">
+                                                        <?php if ($row1['status'] != 'approved') {
+
+                                                        ?>
+
+                                                            <input name="submit" type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value="Approve">
+                                                        <?php } ?>
                                                 </div>
                                             </td>
                                         </tr>

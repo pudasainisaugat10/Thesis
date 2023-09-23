@@ -113,7 +113,113 @@ if (isset($_POST['submit'])) {
         </div>
       </div>
 
-      
+      <div>
+        <label class="font-semibold py-2">Price: 10</label>
+      </div>
+      <div class="mb-4">
+        <label class="block font-semibold mb-2">Payment Via:</label>
+        <div class="flex justify-evenly">
+          <div>
+            <label>
+              <input type="radio" name="payment" value="Cash on Office" class="mr-1" />
+              Cash on Office , Or
+            </label>
+          </div>
+
+        </div>
+        <div class="flex justify-evenly mt-5 mr-14">
+          <div>
+            <label>
+              <input id="khalti" type="radio" name="payment" value="Khalti" class="mr-1" />
+              Khalti
+            </label>
+          </div>
+        </div>
+
+        <button id="payment-button" style="display: none;" class="bg-green-500 text-white font-medium rounded-md py-2 px-4 shadow-sm hover:bg-gray-500">Pay with Khalti</button>
+        <script>
+          var config = {
+            // replace the publicKey with yours
+            "publicKey": "test_public_key_a9cf3dd5c58c4a0aa45b92d8d8d8c33f",
+            "productIdentity": "01",
+            "productName": "HealthService",
+            "productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+            "paymentPreference": [
+              "KHALTI",
+              "EBANKING",
+              "MOBILE_BANKING",
+              "CONNECT_IPS",
+              "SCT",
+            ],
+            "eventHandler": {
+              onSuccess(payload) {
+                // hit merchant api for initiating verfication
+                console.log(payload);
+
+                <?php
+                $args = http_build_query(array(
+                  'token' => 'QUao9cqFzxPgvWJNi9aKac',
+                  'amount'  => 10
+                ));
+
+                $url = "https://khalti.com/api/v2/payment/verify/";
+
+                # Make the call using API.
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+                $headers = ['Authorization: Key test_secret_key_b87d62517e754c9cbbe2be587a94ef8e'];
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+                // Response
+                $response = curl_exec($ch);
+                $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                curl_close($ch);
+
+                function console_log($output, $with_script_tags = true)
+                {
+                  $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
+                    ');';
+                  if ($with_script_tags) {
+                    $js_code = '<script>' . $js_code . '</script>';
+                  }
+                  echo $js_code;
+                }
+                ?>
+              },
+              onError(error) {
+                console.log(error);
+              },
+              onClose() {
+                console.log('widget is closing');
+              }
+            }
+          };
+
+          var checkout = new KhaltiCheckout(config);
+          var btn = document.getElementById("payment-button");
+          btn.onclick = function() {
+            // minimum transaction amount must be 10, i.e 1000 in paisa.
+            checkout.show({
+              amount: 1000
+            });
+          }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+          // Show the "payment-button" element when the element with id "khalti" is clicked, using jQuery.
+          $(document).ready(function() {
+            $("#khalti").click(function() {
+
+              $("#payment-button").show();
+            });
+          });
+        </script>
+      </div>
       <div class="flex justify-center">
         <input type="submit" value="Get Appointment" name="submit" class="bg-green-500 text-white font-medium rounded-md py-2 px-4 shadow-sm hover:bg-gray-500">
 

@@ -1,6 +1,6 @@
 <?php
 $user = new DatabaseTable('users');
-
+//user registration 
 if (isset($_POST['submit'])) {
   $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
   if ($_POST['password'] == $_POST['password_confirmation']) {

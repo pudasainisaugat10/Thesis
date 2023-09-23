@@ -1,0 +1,36 @@
+Database Login 
+username: "root"
+password: " "
+database: "healthone"
+
+Admin login
+Admin-1 Email:saugat@gmail.com
+        Password:saugat
+
+user-1 Email:users@gmail.com
+       Password:saugat
+
+
+
+Features:
+Login- Used Password Hash Encoding for both admin and users
+Admin Features- Add, Edit, Delete, View.
+User Features- View Article, join events, book appointments, Create plans, online payment service
+
+
+
+Tools used during task:
+XAAMP, VISUAL STUDIO, CHROME BROWSER
+
+
+References:
+1. Stack Overflow. 2022. Using PHP (PDO) to show image (blob) from mysql database in HTML image tag. [online] Available at: <https://stackoverflow.com/questions/54638875/using-php-pdo-to-show-image-blob-from-mysql-database-in-html-image-tag> [Accessed 1 july 2023].
+
+2. PHP Tutorial. 2022. PHP PDO Tutorial. [online] Available at: <https://www.phptutorial.net/php-pdo/> [Accessed 12 july 2023].
+
+3. Phppot. 2022. MySQL BLOB using PHP - Phppot. [online] Available at: <https://phppot.com/php/mysql-blob-using-php/> [Accessed 1 September 2023].
+
+4. Php.net. 2022. PHP: password_hash - Manual. [online] Available at: <https://www.php.net/manual/en/function.password-hash.php> [Accessed 2 September 2023].
+
+
+

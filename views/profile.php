@@ -76,24 +76,7 @@ if (isset($_POST['submit3'])) {
         <!-- Profile Picture Rendering -->
         <img src="URL_TO_PROFILE_PICTURE" alt="" class="w-full h-full rounded-full bg-contain" />
       </div>
-      <!-- <div class="top-0 -right-10 mt-2 mr-2">
-        <label for="image-upload" class="cursor-pointer">
-          <input type="file" id="image-upload" accept="image/*" class="sr-only" />
-          <div class="flex items-center">
-            <label for="image-upload" class="cursor-pointer">
-              <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-black hover:text-blue-700">
-                <path d="M5 2H3v3H0v2h3v3h2V7h3V5H5V2zm12 1h-7v2h5v2h5v12H5v-7H3v9h19V5h-5V3zm-7 6h4v2h2v4h-2v2h-4v-2h4v-4h-4V9zm-2 2h2v4H8v-4z" fill="currentColor" />
-              </svg>
-            </label>
-            <button class="bg-gray-500 hover:bg-red-400 text-white px-2 py-1 rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" width="" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-              </svg>
-            </button>
-          </div>
-        </label>
-      </div> -->
+
     </div>
 
     <!-- User personal Info-->
